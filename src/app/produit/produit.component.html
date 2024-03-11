@@ -1,0 +1,51 @@
+<!-- produit.component.html -->
+<div class="container">
+  <div *ngFor="let produit of listeProduits" class="product">
+    <h2>{{ produit.nom }}</h2>
+    <img [src]="produit.image" alt="{{ produit.nom }} Image">
+    <p>Prix: {{ produit.prix | currency }}</p>
+    <p>Catégorie: {{ produit.categorie }}</p>
+    <p>Quantité en stock: {{ produit.quantiteStock }}</p>
+    <p>Quantité minimale pour commander: {{ produit.quantiteMinCommande }}</p>
+
+    <hr>
+  </div>
+</div>
+
+<div>
+  <h1>Liste des Produits</h1>
+
+  <button (click)="trierParPrixAscendant()" class="filter-button">Trier par Prix (Ascendant)</button>
+  <button (click)="trierParPrixDescendant()" class="filter-button">Trier par Prix (Descendant)</button>
+  <button (click)="filtrerParCategorie('Categorie1')" class="filter-button">Filtrer par Catégorie 1</button>
+  <button (click)="filtrerParCategorie('Categorie2')" class="filter-button">Filtrer par Catégorie 2</button>
+  <button (click)="filtrerParCategorie('Categorie3')" class="filter-button">Filtrer par Catégorie 3</button>
+  <button (click)="reinitialiserFiltres()" class="reset-button">Réinitialiser les Filtres</button>
+
+  <!-- Afficher les produits filtrés -->
+  <div class="container">
+    <div *ngFor="let produit of produitsFiltres" class="product">
+      <h2>{{ produit.nom }}</h2>
+      <img [src]="produit.image" alt="{{ produit.nom }} Image">
+      <p>Prix: {{ produit.prix | currency }}</p>
+      <p>Catégorie: {{ produit.categorie }}</p>
+      <p>Quantité en stock: {{ produit.quantiteStock }}</p>
+      <p>Quantité minimale pour commander: {{ produit.quantiteMinCommande }}</p>
+      <p>Quantité: <input type="number" [(ngModel)]="quantites[produit.nom]" (change)="controlerQuantite(produit.nom, $event)"></p>
+      <button (click)="ajouterAuPanier(produit)">Ajouter au Panier</button>
+
+      <hr>
+    </div>
+  </div>
+
+    <!-- Shopping Cart -->
+    <h1>Panier</h1>
+    <div class="container">
+      <div *ngFor="let entry of panier.entries()" class="product">
+        <p>{{ entry[0].nom }} - Quantité: {{ entry[1] }}</p>
+      </div>
+
+    </div>
+</div>
+
+

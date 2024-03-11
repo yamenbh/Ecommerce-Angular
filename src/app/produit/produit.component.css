@@ -1,0 +1,88 @@
+/* Ajoutez votre style CSS ici */
+
+/* Style pour le conteneur principal */
+.container {
+  display: flex;
+  justify-content: flex-start;  /* Aligner les éléments à partir du début (à gauche) */
+  align-items: flex-start;  /* Aligner les éléments en haut */
+  flex-wrap: nowrap;  /* Empêcher le passage à la ligne (pas de saut de ligne) */
+  margin: -10px;  /* Ajustement pour compenser les marges internes des éléments enfants */
+}
+
+/* Style pour chaque produit dans la liste */
+.product {
+  width: 30%;  /* Ajustez la largeur selon vos besoins */
+  margin: 10px;  /* Ajoutez une marge autour de chaque produit */
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+p {
+  margin: 5px 0;
+}
+
+/* Style pour les boutons de filtrage */
+button {
+  margin: 5px;
+  padding: 10px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* Style pour les boutons spécifiques */
+button:nth-child(2) {
+  background-color: #3498db;
+  color: #fff;
+}
+
+button:nth-child(3) {
+  background-color: #e74c3c;
+  color: #fff;
+}
+
+/* Ajoutez votre style CSS ici */
+
+/* ... (autres styles) */
+
+/* Style pour les boutons de filtrage */
+.filter-button {
+  margin: 5px;
+  padding: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #3498db;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+/* Ajouter une couleur de survol pour les boutons de filtrage */
+.filter-button:hover {
+  background-color: #2c3e50;
+}
+
+/* Style pour le bouton de réinitialisation */
+.reset-button {
+  margin: 5px;
+  padding: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #e74c3c;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+/* Ajouter une couleur de survol pour le bouton de réinitialisation */
+.reset-button:hover {
+  background-color: #c0392b;
+}
